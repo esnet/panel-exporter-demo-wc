@@ -1,0 +1,137 @@
+<doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/public/build/panel-exporter/grafana.panel-exporter.dark.css" />
+    <link rel="stylesheet" href="/public/build/panel-exporter/grafana.panel-exporter.exporter.css" />
+    <link rel="stylesheet" href="/src/app.css" />
+    <script src="/public/build/panel-exporter/exporter.js"></script>
+    <script src="/lib/package/dist/esm/component.mjs" type="module"></script>
+    <script src="/src/todo.js" type="module"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Exporter Demo</title>
+  </head>
+  <body>
+      <h1 className='app-heading'>Demonstration App</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <h4>Here's a demo To-Do app:</h4>
+            </td>
+            <td>
+              <h4>And Here are Grafana Panels:</h4>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:50%; min-width: 300px; height: 350px;">
+              <to-do />
+            </td>
+            <td style="width:50%; padding-left: 20px" class='grafana-panel-exporter'>
+              <grafana-panel dashboard-uid="bekpehjk9vthce" panel-id="1" height="300" width="460"></grafana-panel>
+            </td>
+            <td style='padding-left: 20px' class='grafana-panel-exporter two'>
+              <grafana-panel dashboard-uid="bekpehjk9vthce" panel-id="2" height="300" width="460" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+            </td>
+            <td colspan='3' class='grafana-panel-exporter three' style="padding-left: 20px; padding-top: 20px;">
+              <grafana-panel dashboard-uid="bekpehjk9vthce" panel-id="3" height="350" width="942" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+            </td>
+            <td colspan='3' class='grafana-panel-exporter four' style="padding-left: 20px; padding-top: 40px;">
+              <grafana-panel dashboard-uid="bekpehjk9vthce" panel-id="4" height="350" width="942" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    <!--script>
+      getBootData().then(()=>{
+            let panel = document.createElement('grafana-panel');
+            // bug workaround. Fix this
+            panel.props = {
+              "dashboardUid": "bekpehjk9vthce",
+              "panelId": "1",
+            }
+            // bug workarounds. Fix this
+            panel.panelId = "1";
+            panel.dashboardUid = "bekpehjk9vthce";
+            panel.height = 3;
+            panel.width = 4;
+            // the 'right way', but this should be doable <normal-html>
+            panel.setAttribute("height", 3);
+            panel.setAttribute("width", 4);
+            panel.setAttribute("panel-id", "1");
+            panel.setAttribute("dashboard-uid", "bekpehjk9vthce");
+            let mount = document.querySelector(".grafana-panel-exporter");
+            mount.appendChild(panel);
+
+            panel = document.createElement('grafana-panel');
+            // bug workaround. Fix this
+            panel.props = {
+              "dashboardUid": "bekpehjk9vthce",
+              "panelId": "2",
+            }
+            // bug workarounds. Fix this
+            panel.panelId = "2";
+            panel.dashboardUid = "bekpehjk9vthce";
+            panel.height = 3;
+            panel.width = 4;
+            // the 'right way', but this should be doable <normal-html>
+            panel.setAttribute("height", 3);
+            panel.setAttribute("width", 4);
+            panel.setAttribute("panel-id", "2");
+            panel.setAttribute("dashboard-uid", "bekpehjk9vthce");
+            mount = document.querySelector(".grafana-panel-exporter.two");
+            mount.appendChild(panel);
+
+
+            panel = document.createElement('grafana-panel');
+            // bug workaround. Fix this
+            panel.props = {
+              "dashboardUid": "bekpehjk9vthce",
+              "panelId": "3",
+            }
+            // bug workarounds. Fix this
+            panel.panelId = "3";
+            panel.dashboardUid = "bekpehjk9vthce";
+            panel.height = 3;
+            panel.width = 9;
+            // the 'right way', but this should be doable <normal-html>
+            panel.setAttribute("height", 3);
+            panel.setAttribute("width", 9);
+            panel.setAttribute("panel-id", "3");
+            panel.setAttribute("dashboard-uid", "bekpehjk9vthce");
+            mount = document.querySelector(".grafana-panel-exporter.three");
+            mount.appendChild(panel);
+
+
+            panel = document.createElement('grafana-panel');
+            // bug workaround. Fix this
+            panel.props = {
+              "dashboardUid": "bekpehjk9vthce",
+              "panelId": "4",
+            }
+            // bug workarounds. Fix this
+            panel.panelId = "4";
+            panel.dashboardUid = "bekpehjk9vthce";
+            panel.height = 3;
+            panel.width = 9;
+            // the 'right way', but this should be doable <normal-html>
+            panel.setAttribute("height", 3);
+            panel.setAttribute("width", 9);
+            panel.setAttribute("panel-id", "3");
+            panel.setAttribute("dashboard-uid", "bekpehjk9vthce");
+            mount = document.querySelector(".grafana-panel-exporter.four");
+            mount.appendChild(panel);
+      })
+    </script-->
+  </body>
+</html>
